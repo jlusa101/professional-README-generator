@@ -22,9 +22,9 @@ ${data.description} \n
 * [Credits](#credits)
 * [License](#license) \n
 ## Questions
-Please do not hesitate to contact me with further questions!\n
-GitHub: [${data.username}](https://github.com/jlusa101)\n
-Email: ${data.email}\n
+Please do not hesitate to contact me with further questions! \n
+GitHub: [${data.username}](https://github.com/jlusa101) \n
+Email: ${data.email} \n
 `;
 }
 
