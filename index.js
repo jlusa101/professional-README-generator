@@ -1,11 +1,12 @@
-// TODO: Include packages needed for this application
+// Packets to be included with this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateReadMe = require("./utils/generateMarkdown.js");
-const generateMarkdown = require('./utils/generateMarkdown.js');
 
+// File name as a constant
 const fileName = "README.md";
-// TODO: Create an array of questions for user input
+
+// Array of questions objects that will be asked from the user
 const questions = [{
         type: 'input',
         name: 'title',
@@ -42,7 +43,7 @@ const questions = [{
         type: 'input',
         name: 'installation',
         message: "What are the installation instructions for this project?",
-        when: ({confirmInstallation}) => {
+        when: ({ confirmInstallation }) => {
             if (confirmInstallation) {
                 return true;
             } else {
@@ -60,7 +61,7 @@ const questions = [{
         type: 'input',
         name: 'usage',
         message: "What are the usage information for this project? (Required)",
-        when: ({confirmUsage}) => {
+        when: ({ confirmUsage }) => {
             if (confirmUsage) {
                 return true;
             } else {
@@ -78,7 +79,7 @@ const questions = [{
         type: 'input',
         name: 'contribution',
         message: "What are the contribution guidelines for this project? (Required)",
-        when: ({confirmContribution}) => {
+        when: ({ confirmContribution }) => {
             if (confirmContribution) {
                 return true;
             } else {
@@ -96,7 +97,7 @@ const questions = [{
         type: 'input',
         name: 'test',
         message: "What are the test instructions for this project? (Required)",
-        when: ({confirmTest}) => {
+        when: ({ confirmTest }) => {
             if (confirmTest) {
                 return true;
             } else {
@@ -146,7 +147,8 @@ const questions = [{
     }
 ];
 
-// TODO: Create a function to write README file
+// Function that when called, creates a file called README.md and writes markdown language to it. If error occurs, user will be notified
+// Takes two parameters, name of file and the user inputted data
 function writeToFile(fileName, data) {
 
     fs.writeFile(fileName, data.toString(), function(err) {
@@ -160,13 +162,26 @@ function writeToFile(fileName, data) {
     });
 }
 
-// TODO: Create a function to initialize app
+// Function that welcomes the user to the application
 const init = () => {
     console.log("Welcome to a professional README.md generator! Begin by answering the following prompts.");
-    console.log("=======================");
-    inquirer.prompt(questions)
+    console.log("=========================");
+}
+
+// function that begins to ask user questions about their README file
+const promptUser = () => {
+    return inquirer.prompt(questions);
+}
+
+// Function call to initialize app
+init();
+
+// Function call to begin asking the user questions about their README file
+// The answers are passed to generateReadMe where the data is being processed and then returned as markdown language
+// Then that markup language is passed to the writeToFile function that writes to the README.md file
+promptUser()
     .then(answers => {
-        return generateMarkdown(answers);
+        return generateReadMe(answers);
     })
     .then(markdown => {
         writeToFile(fileName, markdown);
@@ -174,8 +189,3 @@ const init = () => {
     .catch(err => {
         console.log(err);
     });
-}
-
-// Function call to initialize app
-init();
-

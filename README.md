@@ -1,7 +1,7 @@
-# Joona's Test ReadMe 
+# Professional README.md Generator 
 
 ## Description
-NANANANANANANANANANAN 
+This project contains an application that can be used to generate a README.md file. 
 
 ## Table of Contents 
 
@@ -12,5 +12,5 @@ NANANANANANANANANANAN
 
 ## Questions
 Please do not hesitate to contact me with further questions!
-GitHub: [jlusa101](https://github.com/jlusa101)
-Email: joona.lusa@gmail.com
+GitHub: [jlusa101](https://github.com/jlusa101) 
+Email: joona.lusa@hotmail.com
