@@ -1,6 +1,6 @@
 function renderLicenseBadge(data) {
     return ` 
-[![license](https://img.shields.io/badge/license-${data.license}-blue)](https://shields.io)
+![badge](https://img.shields.io/badge/license-${data.license}-brightorange)
   `;
 }
 
