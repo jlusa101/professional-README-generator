@@ -1,10 +1,10 @@
 # Professional README.md Generator
  
-[![license](https://img.shields.io/badge/license-ISC License-blue)](https://shields.io)
+![badge](https://img.shields.io/badge/license-Apache License 2.0-brightorange)
   
 ## Description 
 
-This application can be used to generate a README.md file. 
+This application can be used to generate a professional grade README.md file. 
 
 ## Table of Contents 
 
@@ -14,26 +14,25 @@ This application can be used to generate a README.md file.
 * [License](#license) 
 
 ## Installation
-Please ensure to have Inquirer installed on your machine as well as JSON packages.
+NADA
       
-
 ## Usage
 NADA
   
-
 ## Contribution
 NADA
 
-
 ## Test
+NADA
 
 ## License 
 
-_This application has the ISC License._
+_This application has the Apache License 2.0._
+
 For more information, [license]()
     
 ## Questions 
 
 Please do not hesitate to contact me with further questions!
 * GitHub: [jlusa101](https://github.com/jlusa101) 
-* Email: joona.lusa@hotmail.com
+* Email: email@email.com
