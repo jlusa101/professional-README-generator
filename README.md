@@ -1,10 +1,8 @@
 # Professional README.md Generator
- 
-![badge](https://img.shields.io/badge/license-Apache License 2.0-brightorange)
-  
+undefined
 ## Description 
 
-This application can be used to generate a professional grade README.md file. 
+Nothing at this time 
 
 ## Table of Contents 
 
@@ -27,7 +25,7 @@ NADA
 
 ## License 
 
-_This application has the Apache License 2.0._
+_This application has the GNU GPLv3._
 
 For more information, [license]()
     
@@ -35,4 +33,4 @@ For more information, [license]()
 
 Please do not hesitate to contact me with further questions!
 * GitHub: [jlusa101](https://github.com/jlusa101) 
-* Email: email@email.com
+* Email: nada@email.com

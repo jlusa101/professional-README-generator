@@ -1,10 +1,16 @@
-function renderLicenseBadge(data) {
-    return ` 
-![badge](https://img.shields.io/badge/license-${data.license}-brightorange)
-  `;
-}
-
 let licenseLink = '';
+
+function renderLicenseBadge(data) {
+    if (data.license === "MIT") {
+        return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+    } else if (data.license === "Apache License 2.0") {
+        return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+    } else if (data.license === "GNU GPLv3") {
+        return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+    } else if (data.license === "ISC License") {
+        return "[![License](https://img.shields.io/badge/license-ISC-brightgreen.svg)](https://opensource.org/licenses/ISC)";
+    }
+}
 
 function renderLicenseSection(data) {
 
@@ -18,7 +24,7 @@ function renderLicenseSection(data) {
         licenseLink = 'https://choosealicense.com/licenses/isc/';
     }
     return `## License \n
-_This application has the ${data.license}._
+_This application has the ${data.license}._\n
 For more information, [license](${licenseLink})
     `;
 }
@@ -75,10 +81,10 @@ ${data.description} \n
 * [Usage](#usage)
 * [Contribution Guidelines](#contribution)
 * [License](#license) \n
-${renderInstallationInstructions(data)}\n
-${renderUsageInformation(data)}\n
-${renderContribution(data)}\n
-${renderTest(data)}\n
+${renderInstallationInstructions(data)}
+${renderUsageInformation(data)}
+${renderContribution(data)}
+${renderTest(data)}
 ${renderLicenseSection(data)}
 ## Questions \n
 Please do not hesitate to contact me with further questions!
