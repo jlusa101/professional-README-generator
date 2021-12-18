@@ -108,7 +108,7 @@ const questions = [{
         }
     },
     {
-        type: 'checkbox',
+        type: 'list',
         name: 'license',
         message: "What license best fits your project from below? (Required)",
         choices: ['MIT', 'Apache License 2.0', 'GNU GPLv3', 'ISC License'],

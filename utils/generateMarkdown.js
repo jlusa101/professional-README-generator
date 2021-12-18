@@ -1,5 +1,7 @@
+// Variable that will hold the license link
 let licenseLink = '';
 
+// Function that returns the License section of the README.md and fills the data with what the user had chosen
 function renderLicenseSection(data) {
 
     if (data.license === "MIT") {
@@ -17,69 +19,93 @@ For more information, [license](${licenseLink})
     `;
 }
 
+// This function returns Installation instuctions if the user had chosen to do so
 function renderInstallationInstructions(data) {
     if (data.confirmInstallation) {
         return `## Installation
-${data.installation}
-      `;
+${data.installation}`;
     } else {
-        return '';
+        return ``;
     }
 }
 
+// This function returns Usage information if the user had chosen to do so
 function renderUsageInformation(data) {
     if (data.confirmUsage) {
         return `## Usage
-${data.usage}
-  `;
+${data.usage}`;
     } else {
-        return '';
+        return ``;
     }
 }
 
+// This function returns Contribution guidelines if the user had chosen to do so
 function renderContribution(data) {
     if (data.confirmContribution) {
         return `## Contribution
-${data.contribution}
-`;
+${data.contribution}`;
     } else {
-        return '';
+        return ``;
     }
 }
 
+// This function returns any Tests that the user wishes to include
 function renderTest(data) {
     if (data.confirmTest) {
         return `## Test
-${data.test}
-`;
+${data.test}`;
     } else {
-        return '';
+        return ``;
     }
 }
 
-// TODO: Create a function to generate markdown for README
+// This function returns Table of content items that the user had chosen to include
+function renderAdditionalContent(data) {
+    var confirmArr = [];
+
+    if (data.confirmInstallation) {
+        var install = `* [Installation](#installation)`;
+        confirmArr.push(install);
+    }
+    if (data.confirmUsage) {
+        var usage = `* [Usage](#usage)`;
+        confirmArr.push(usage);
+    }
+    if (data.confirmContribution) {
+        var contribution = `* [Contribution Guidelines](#contribution)`;
+        confirmArr.push(contribution);
+    }
+    if (data.confirmTest) {
+        var test = `* [Test](#test)`;
+        confirmArr.push(test);
+    }
+
+    var arrToRet = confirmArr.join("\r\n");
+    return arrToRet;
+}
+
+// This function returns the complete README.md that gets written as a file
 function generateMarkdown(data) {
 
     return `# ${data.title}
 [![License](https://img.shields.io/badge/License-${data.license}-yellow.svg)](https://opensource.org/licenses/MIT)
-## Description \n
-${data.description} \n
-## Table of Contents \n
-* [Installation](#installation)
-* [Usage](#usage)
-* [Contribution Guidelines](#contribution)
-* [License](#license) 
-* [Questions](#questions) \n
+## Description 
+${data.description} 
+## Table of Contents 
+${renderAdditionalContent(data)}
+* [License](#license)
+* [Questions](#questions) 
 ${renderInstallationInstructions(data)}
 ${renderUsageInformation(data)}
 ${renderContribution(data)}
 ${renderTest(data)}
 ${renderLicenseSection(data)}
-## Questions \n
+## Questions 
 Please do not hesitate to contact me with further questions!
 * GitHub: [${data.username}](https://github.com/jlusa101) 
 * Email: ${data.email}
 `;
 }
 
+// Exporting this source file to be used by other source files
 module.exports = generateMarkdown;
