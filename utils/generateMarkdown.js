@@ -1,19 +1,4 @@
 let licenseLink = '';
-let licenseBadge = '';
-
-function renderLicenseBadge(data) {
-    if (data.license === "MIT") {
-        licenseBadge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
-    } else if (data.license === "Apache License 2.0") {
-        licenseBadge = `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
-    } else if (data.license === "GNU GPLv3") {
-        licenseBadge = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
-    } else if (data.license === "ISC License") {
-        licenseBadge = `[![License](https://img.shields.io/badge/license-ISC-brightgreen.svg)](https://opensource.org/licenses/ISC)`;
-    }
-
-    return `${licenseBadge}`;
-}
 
 function renderLicenseSection(data) {
 
@@ -38,7 +23,7 @@ function renderInstallationInstructions(data) {
 ${data.installation}
       `;
     } else {
-        return `## Installation`;
+        return '';
     }
 }
 
@@ -48,7 +33,7 @@ function renderUsageInformation(data) {
 ${data.usage}
   `;
     } else {
-        return `## Usage`;
+        return '';
     }
 }
 
@@ -58,7 +43,7 @@ function renderContribution(data) {
 ${data.contribution}
 `;
     } else {
-        return `## Contribution`;
+        return '';
     }
 }
 
@@ -68,7 +53,7 @@ function renderTest(data) {
 ${data.test}
 `;
     } else {
-        return `## Test`;
+        return '';
     }
 }
 
@@ -76,14 +61,15 @@ ${data.test}
 function generateMarkdown(data) {
 
     return `# ${data.title}
-${renderLicenseBadge(data)}
+[![License](https://img.shields.io/badge/License-${data.license}-yellow.svg)](https://opensource.org/licenses/MIT)
 ## Description \n
 ${data.description} \n
 ## Table of Contents \n
 * [Installation](#installation)
 * [Usage](#usage)
 * [Contribution Guidelines](#contribution)
-* [License](#license) \n
+* [License](#license) 
+* [Questions](#questions) \n
 ${renderInstallationInstructions(data)}
 ${renderUsageInformation(data)}
 ${renderContribution(data)}

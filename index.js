@@ -1,6 +1,8 @@
 // Packets to be included with this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+
+// Utilizing another js file that contains the code to generate markdown language
 const generateReadMe = require("./utils/generateMarkdown.js");
 
 // File name as a constant
